@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <a href="powerspage">Add Power</a><br>
+      <a href="heropage">Add Hero</a><br>
+      <a href="logout">Log Out</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Powers</th>
+          <th>Likes</th>
+          <th>Action</th>
+        </thead>
+        {%for hero in herolist%}
+        <tr>
+          <td><a href="supers/hero/{{hero.id}}">{{hero.name}}</a></td>
+          <td>{{hero.powers}}</td>
+          <td>{{hero.likes}}</td>
+          <td>{%if hero.liked%}
+              <a href="hero/{{hero.id}}/unlike">Unlike</a>
+              {{hero.liked}}
+              {%else%}
+              <a href="hero/{{hero.id}}/like">Like</a>
+              {{hero.liked}}
+              {%endif%}
+            </td>
+        </tr>
+        {%endfor%}
+      </table>
+    </div>
+  </body>
+</html>

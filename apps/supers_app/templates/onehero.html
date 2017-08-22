@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+  </head>
+  <body>
+    <h2>Hero Name: {{name}}</h2>
+    <h2>likes:{{likes}}</h2>
+    <h2>Powers: {{powers}}</h2>
+
+    <br>
+    <br>
+    <br>
+    <h3>Add a power:</h3>
+    <form class="" action="addheropower" method="post">
+      {% csrf_token %}
+    <input type="hidden" name="hero_id" value="{{heroid}}">
+    <select class="" name="poweradded">
+      {%for power in powerlist%}
+      <option value="{{power.id}}">{{power.name}}</option>
+      {%endfor%}
+    </select>
+    <input type="submit" name="" value="Add Power to Hero">
+    </form>
+
+
+  </body>
+</html>

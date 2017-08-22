@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a Hero</title>
+  </head>
+  <body>
+    <form class="" action="process_hero" method="post">
+      {% csrf_token %}
+      Name: <input type="text" name="hero_name" value=""><br>
+      <input type="submit" name="" value="Add Hero">
+    </form>
+  </body>
+</html>
